@@ -84,7 +84,7 @@ router.post("/", (req, res) => {
   // Sending emails
   contactEmail.sendMail(mailToAsher, (error) => {
     if (error) {
-      res.json({ status: "ERROR" });
+      res.json({ status: "ERROR", error });
     } else {
       // Send welcome email to user
       sendEmail(email, mailToUser.subject, mailToUser.html);
